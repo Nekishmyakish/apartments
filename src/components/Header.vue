@@ -42,6 +42,7 @@
 .header__buttons {
   display: flex;
   justify-content: space-around;
+  font-family: roboto;
 }
 </style>
 

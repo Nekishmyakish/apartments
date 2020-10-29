@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <Content />
+    <Content ::min="min" :max="max" @update:min="value => min = value" @update:max="value => max = value"></Content>
   </div>
 </template>
 
