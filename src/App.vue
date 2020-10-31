@@ -1,12 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <Content
-      ::min="min"
-      :max="max"
-      @update:min="(value) => (min = value)"
-      @update:max="(value) => (max = value)"
-    ></Content>
+    <Parameters />
     <AppartmentCard />
   </div>
 </template>
@@ -18,21 +13,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  border: 20px solid black;
 }
 </style>
 
 <script>
-import Header from "./components/Header";
-import Content from "./components/Content";
+import Header from "./components/Header"
+import Parameters from "./components/Parameters";
 import AppartmentCard from "./components/AppartmentCard";
 
 export default {
   name: "App",
   components: {
     Header,
-    Content,
+    Parameters,
     AppartmentCard,
   },
 };

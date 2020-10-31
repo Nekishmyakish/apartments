@@ -1,8 +1,11 @@
 <template>
   <div class="container">
     <div class="appartmentCard__header">
-      <p>3 этаж</p>
-      <p>1 комната - 22.94 м&sup2;</p>
+      <p class="appartmentCard__header-floor">3 этаж</p>
+      <p class="appartmentCard__header-room">
+        1 комната <span class="appartmentCard__header-dash"> - </span> 22.94
+        м&sup2;
+      </p>
     </div>
     <div class="appartmentCard__content">
       <p class="appartmentCard__content-flatNumber">№256</p>
@@ -43,12 +46,12 @@
       </svg>
     </div>
     <div class="appartmentCard__price">
-      <h2>2 729 860 р.</h2>
-      <p>119 000 р. за м&sup2;</p>
+      <p class="appartmentCard__price-full">2 729 860 р.</p>
+      <p class="appartmentCard__price-meter">119 000 р. за м&sup2;</p>
     </div>
-    <div class="appartmentCard__button">
-      <button>
-        Подробнее
+    <div>
+      <button class="appartmentCard__button">
+        ПОДРОБНЕЕ
       </button>
     </div>
   </div>
@@ -57,41 +60,81 @@
 <style scoped>
 .container {
   width: 270px;
-  height: 365px;
+  height: 380px;
   background: #ffffff;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 5px 20px rgba(86, 86, 86, 0.05);
   border-radius: 10px;
-}
-
-.appartmentCard__content {
-  width: 250px;
-  height: 250px;
-  text-align: right;
-  border: 1px solid #ebebeb;
-  box-sizing: border-box;
-  border-radius: 5px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.appartmentCard__content-flatNumber {
-  /* width: 62px;
-  height: 30px; */
-  border: 1px solid #ebebeb;
-  box-sizing: border-box;
-  border-radius: 0px 5px;
+  font-weight: bold;
 }
 
 .appartmentCard__header {
   display: flex;
   justify-content: space-around;
+  font-size: 12px;
+}
+
+.appartmentCard__header-floor,
+.appartmentCard__header-dash {
+  color: #2c323a;
+  opacity: 0.5;
+}
+
+.appartmentCard__header-room {
+  white-space: pre;
+}
+
+.appartmentCard__content {
+  width: 250px;
+  height: 230px;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: auto;
+  font-size: 14px;
+}
+
+.appartmentCard__content-flatNumber {
+  width: 62px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 187px;
+  margin-top: -1px;
+  margin-bottom: 0;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 0px 5px;
 }
 
 .appartmentCard__price {
   text-align: right;
   margin-right: 10px;
+}
+
+.appartmentCard__price-full {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.appartmentCard__price-meter {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #2c323a;
+  opacity: 0.5;
+}
+
+.appartmentCard__button {
+  margin: auto;
+  width: 250px;
+  height: 40px;
+  color: #ffffff;
+  font-weight: bold;
+  background: #70d24e;
+  border: none;
+  border-radius: 2px 2px 5px 5px;
+  outline: none;
 }
 </style>
 

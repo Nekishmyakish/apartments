@@ -71,7 +71,7 @@ export default {
   display: block;
   position: relative;
   height: 36px;
-  width: 100%;
+  width: 200px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -104,7 +104,7 @@ export default {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: absolute;
-  width: calc(100% - 36px);
+  width: 175px;
   left: 18px;
   top: 16px;
   height: 4px;
@@ -117,6 +117,6 @@ export default {
   display: block;
   height: 100%;
   width: 0%;
-  background: orange;
+  background: #70d24e;
 }
 </style>
