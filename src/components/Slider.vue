@@ -1,7 +1,12 @@
 <template>
   <div class="content">
+    <div class="slider__info">
+      <input type="text" class="slider__info-input" />
+      <p>-</p>
+      <input type="text" class="slider__info-input" />
+    </div>
     <div
-      id="my-slider"
+      v-bind:id="propId"
       :se-min="minThreshold"
       :se-step="step"
       :se-min-value="min"
@@ -26,6 +31,10 @@
 import ZbRangeSlider from "./ZbRangeSlider";
 export default {
   props: {
+    propId: {
+      type: String,
+      required: true,
+    },
     minThreshold: {
       type: Number,
       default: -100,
@@ -53,8 +62,11 @@ export default {
     };
   },
   mounted: function() {
-    this.instance = new ZbRangeSlider("my-slider");
-    this.instance.onChange = (min, max) => this.updateValues(min, max);
+    this.instance = new ZbRangeSlider(this.propId);
+    this.instance.onChange = (min, max) => {
+      this.updateValues(min, max);
+      console.log(min, max);
+    };
   },
   destroyed: function() {},
   methods: {
@@ -67,6 +79,23 @@ export default {
 </script>
 
 <style>
+.slider__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider__info-input {
+  font-size: 16px;
+  width: 80px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #d8d8d8;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+}
+
 .slider {
   display: block;
   position: relative;

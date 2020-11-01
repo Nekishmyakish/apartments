@@ -166,12 +166,12 @@ export default function(id) {
     }
   }
 
-  function onStop() {
+  function onStop(event) {
     document.removeEventListener("mousemove", onMove);
     document.removeEventListener("mouseup", onStop);
     document.removeEventListener("touchmove", onMove);
     document.removeEventListener("touchend", onStop);
-
+    console.log(event);
     selectedTouch = null;
 
     // write new value
@@ -197,9 +197,10 @@ export default function(id) {
 
   function calculateValue() {
     var newValue = (lineSpan.offsetWidth - normalizeFact) / initialValue;
+
     var minValue = lineSpan.offsetLeft / initialValue;
     var maxValue = minValue + newValue;
-
+    console.log(minValue, maxValue);
     minValue = minValue * (max - min) + min;
     maxValue = maxValue * (max - min) + min;
 

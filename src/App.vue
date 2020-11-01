@@ -12,13 +12,14 @@
   font-family: Gotham Pro, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: bold;
   text-align: center;
   border: 20px solid black;
 }
 </style>
 
 <script>
-import Header from "./components/Header"
+import Header from "./components/Header";
 import Parameters from "./components/Parameters";
 import AppartmentCard from "./components/AppartmentCard";
 
