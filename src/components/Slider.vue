@@ -1,9 +1,9 @@
 <template>
   <div class="content">
     <div class="slider__info">
-      <input type="text" class="slider__info-input" />
-      <p>-</p>
-      <input type="text" class="slider__info-input" />
+      <input type="text" class="slider__info-input" :value="minValue" />
+      <p class="slider__info-dash">-</p>
+      <input type="text" class="slider__info-input" :value="maxValue" />
     </div>
     <div
       v-bind:id="propId"
@@ -58,6 +58,8 @@ export default {
   },
   data: function() {
     return {
+      minValue: this.min,
+      maxValue: this.max, 
       instance: undefined,
     };
   },
@@ -65,7 +67,8 @@ export default {
     this.instance = new ZbRangeSlider(this.propId);
     this.instance.onChange = (min, max) => {
       this.updateValues(min, max);
-      console.log(min, max);
+      this.minValue = min;
+      this.maxValue = max;
     };
   },
   destroyed: function() {},
@@ -94,6 +97,11 @@ export default {
   box-sizing: border-box;
   border-radius: 5px;
   outline: none;
+  text-align: center;
+}
+
+.slider__info-dash {
+  margin: 0;
 }
 
 .slider {
@@ -122,10 +130,10 @@ export default {
 .slider .slider-touch-left span,
 .slider .slider-touch-right span {
   display: block;
-  width: 100%;
-  height: 100%;
-  background: #f0f0f0;
-  border: 1px solid #a4a4a4;
+  width: 70%;
+  height: 70%;
+  background: #70d24e;
+  border: 5px solid white;
   border-radius: 50%;
 }
 .slider .slider-line {
@@ -133,12 +141,12 @@ export default {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: absolute;
-  width: 175px;
-  left: 18px;
-  top: 16px;
-  height: 4px;
+  width: 200px;
+  left: 1px;
+  top: 18px;
+  height: 2px;
   border-radius: 4px;
-  background: #f0f0f0;
+  background: #d8d8d8;
   z-index: 0;
   overflow: hidden;
 }

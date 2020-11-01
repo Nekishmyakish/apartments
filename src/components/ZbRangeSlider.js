@@ -166,12 +166,11 @@ export default function(id) {
     }
   }
 
-  function onStop(event) {
+  function onStop() {
     document.removeEventListener("mousemove", onMove);
     document.removeEventListener("mouseup", onStop);
     document.removeEventListener("touchmove", onMove);
     document.removeEventListener("touchend", onStop);
-    console.log(event);
     selectedTouch = null;
 
     // write new value
@@ -200,11 +199,9 @@ export default function(id) {
 
     var minValue = lineSpan.offsetLeft / initialValue;
     var maxValue = minValue + newValue;
-    console.log(minValue, maxValue);
     minValue = minValue * (max - min) + min;
     maxValue = maxValue * (max - min) + min;
 
-    console.log(step);
     if (step !== 0.0) {
       var multi = Math.floor(minValue / step);
       minValue = step * multi;
