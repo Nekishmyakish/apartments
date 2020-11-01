@@ -12,7 +12,7 @@
       </div>
       <div>
         <p class="parameters__text">ЭТАЖ</p>
-        <Slider propId="floor" :minThreshold=1 :maxThreshold=99 :min=1 :max=99 />
+        <Slider propId="floor" :minThreshold=1 :maxThreshold=99 :min=1 :max=99 onChange=""/>
       </div>
       <div>
         <p class="parameters__text">ПЛОЩАДЬ, м&sup2;</p>
