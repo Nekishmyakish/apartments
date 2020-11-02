@@ -59,7 +59,7 @@ export default {
   data: function() {
     return {
       minValue: this.min,
-      maxValue: this.max, 
+      maxValue: this.max,
       instance: undefined,
     };
   },
@@ -69,6 +69,7 @@ export default {
       this.updateValues(min, max);
       this.minValue = min;
       this.maxValue = max;
+      this.$props.onChangeParam(min, max);
     };
   },
   destroyed: function() {},

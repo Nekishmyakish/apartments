@@ -3,7 +3,7 @@
     <div class="parameters">
       <div>
         <p class="parameters__text">КОМНАТЫ</p>
-        <div>
+        <div class="parameters__buttons">
           <button class="parameters__buttons-rooms">S</button>
           <button class="parameters__buttons-rooms_1k">1к</button>
           <button class="parameters__buttons-rooms_2k">2к</button>
@@ -12,15 +12,34 @@
       </div>
       <div>
         <p class="parameters__text">ЭТАЖ</p>
-        <Slider propId="floor" :minThreshold=1 :maxThreshold=99 :min=1 :max=99 onChange=""/>
+        <Slider
+          propId="floor"
+          :minThreshold="1"
+          :maxThreshold="99"
+          :min="1"
+          :max="99"
+          :onChangeParam="this.floorChange"
+        />
       </div>
       <div>
         <p class="parameters__text">ПЛОЩАДЬ, м&sup2;</p>
-        <Slider propId="square" :minThreshold=99 :maxThreshold=999 :min=99 :max=999 />
+        <Slider
+          propId="square"
+          :minThreshold="99"
+          :maxThreshold="999"
+          :min="99"
+          :max="999"
+        />
       </div>
       <div>
         <p class="parameters__text">СТОИМОСТЬ, млн. р.</p>
-        <Slider propId="cost" :minThreshold=9.9 :maxThresholdx=99.9 :min=9.9 :max=99.9 />
+        <Slider
+          propId="cost"
+          :minThreshold="9.9"
+          :maxThresholdx="99.9"
+          :min="9.9"
+          :max="99.9"
+        />
       </div>
       <div class="parameters__buttons-result">
         <button class="parameters__buttons-result_apply">ПРИМЕНИТЬ</button>
@@ -44,10 +63,17 @@
   margin-bottom: 5px;
 }
 
+.parameters__buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 220px;
+}
+
 .parameters__buttons-rooms,
 .parameters__buttons-rooms_1k,
 .parameters__buttons-rooms_2k {
-  display: inline-block;
+  width: 40px;
+  display: block;
   color: rgb(68, 68, 68);
   text-decoration: none;
   user-select: none;
@@ -92,7 +118,7 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
 }
 
-.parameters__buttons-rooms_1k {
+/* .parameters__buttons-rooms_1k {
   margin-left: 5px;
   margin-right: 2.5px;
 }
@@ -100,7 +126,7 @@
 .parameters__buttons-rooms_2k {
   margin-left: 2.5px;
   margin-right: 5px;
-}
+} */
 
 .parameters__buttons-result {
   display: flex;
@@ -139,6 +165,11 @@
 import Slider from "./Slider";
 
 export default {
+  methods: {
+    floorChange(min, max) {
+      this.$store.commit("setFloorRange", min, max);
+    },
+  },
   components: {
     Slider,
   },

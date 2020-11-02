@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="content__top">
-      <AppartmentCardInit class/>
+      <AppartmentCardInit class />
       <AppartmentCardInit />
       <AppartmentCardInit />
       <AppartmentCardInit />
@@ -41,7 +41,7 @@
 
 <script>
 import AppartmentCardInit from "./AppartmentCardInit";
-
+// сложить сюда данные из store (см. exallange)
 export default {
   components: {
     AppartmentCardInit,
