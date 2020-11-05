@@ -1,6 +1,6 @@
 <template>
   <div class="app__container-inner">
-    <div id="app">
+    <div class="app">
       <Header />
       <Parameters />
       <Content />
@@ -15,12 +15,10 @@
   border-radius: 10px;
 }
 
-#app {
+.app {
   height: 100vh;
   overflow: auto;
   padding-top: 50px;
-  padding-left: 150px;
-  padding-right: 150px;
   padding-bottom: 150px;
   background-color: #f8f8f8;
   border-radius: 10px;

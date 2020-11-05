@@ -25,6 +25,8 @@
 .content__top,
 .content__middle,
 .content__bottom {
+  margin-left: 50px;
+  margin-right: 50px;
   display: flex;
   align-content: center;
 }

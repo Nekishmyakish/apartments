@@ -58,11 +58,10 @@
   width: 270px;
   height: 380px;
   background: #ffffff;
-  margin-left: auto;
-  margin-right: auto;
   box-shadow: 0px 5px 20px rgba(86, 86, 86, 0.05);
   border-radius: 10px;
   font-weight: bold;
+  margin: 10px;
 }
 
 .appartmentCardInit__header {
